@@ -1,0 +1,53 @@
+# Configurações do Apache (HostGator) para as landing pages da Fortram.
+# Se algum módulo não existir no servidor, o bloco <IfModule> correspondente é ignorado.
+
+Options -Indexes
+DirectoryIndex index.html index.php
+
+# Tipos de arquivo usados pelo site (os scripts com import precisam do tipo JavaScript correto)
+<IfModule mod_mime.c>
+  AddType text/javascript .js .mjs
+  AddType application/json .json
+  AddType font/woff2 .woff2
+  AddType image/svg+xml .svg
+  AddType image/webp .webp
+</IfModule>
+
+# Compressão de textos
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Cache
+# - HTML, CSS, JavaScript e dados: o navegador sempre confere se o arquivo mudou (se não mudou,
+#   o servidor responde "304" sem reenviar). Assim, uma correção publicada aparece na hora.
+# - Imagens: 7 dias (se trocar uma imagem mantendo o nome, pode levar até 7 dias para todos verem;
+#   para aparecer na hora, salve com outro nome e atualize o caminho).
+# - Fontes: 1 ano (não mudam).
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 0 seconds"
+  ExpiresByType text/javascript "access plus 0 seconds"
+  ExpiresByType application/javascript "access plus 0 seconds"
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType image/svg+xml "access plus 7 days"
+  ExpiresByType image/webp "access plus 7 days"
+  ExpiresByType image/png "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Cabeçalhos de segurança
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# Arquivos de documentação e de configuração não precisam ser acessados pelo navegador
+<FilesMatch "\.(md|log|ini|lock)$">
+  Require all denied
+</FilesMatch>

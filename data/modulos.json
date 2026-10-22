@@ -1,0 +1,91 @@
+{
+  "total": 273,
+  "base": ["Usuários", "Perfil", "Permissões", "Configurações", "Segurança", "Notificações", "Analytics", "Dashboards", "Logs", "Backups", "Políticas", "Cookies", "Páginas", "Webhooks", "APIs", "Aplicativo", "Offline", "Suporte"],
+  "grupos": [
+    {
+      "id": "base",
+      "nome": "Base de todo sistema",
+      "modulos": ["Usuários", "Perfil", "Permissões", "Configurações", "Segurança", "Notificações", "Analytics", "Dashboards", "Logs", "Backups", "Políticas", "Cookies", "Páginas", "Menus", "Forms", "Webhooks", "APIs", "Aplicativo", "Offline", "Onboarding Screens", "Boas Vindas", "Mídia", "Uploads", "Dispositivos", "Domínios", "Cron Jobs", "Suporte", "Faqs", "Bugs"]
+    },
+    {
+      "id": "vendas",
+      "nome": "Vendas e pagamentos",
+      "modulos": ["Pagamento", "Assinaturas", "Planos", "Quotas", "Carteira", "Créditos", "Recebedores", "Contas Bancárias", "Financeiro", "Vendas", "Orçamentos", "Loja", "eCommerce", "Marketplace", "Produtos", "Catálogo", "Categorias", "Atributos", "Sacola", "Precificador", "Nota Fiscal", "Fretes", "Envios", "Drop Shipping", "Afiliados", "Shop Pay", "Criptomoedas", "Doações"]
+    },
+    {
+      "id": "comunicacao",
+      "nome": "Comunicação e comunidade",
+      "modulos": ["Chat", "Mensagens", "Chamadas", "Rede Social", "Stories", "Comentários", "Reações", "Avaliações", "Reviews", "Favoritos", "Newsletter", "WhatsApp", "Telegram", "Lives", "Streaming", "Vídeos", "PodCasts", "Anúncios", "Campanhas", "Popups", "Denúncias", "Depoimentos"]
+    },
+    {
+      "id": "gestao",
+      "nome": "Gestão e operação",
+      "modulos": ["CRM", "Seller CRM", "Leads", "Clientes", "Comercial", "Atendimentos", "Tarefas", "Projetos", "Agenda", "Reuniões", "Lembretes", "Equipe", "Funcionários", "Ponto Digital", "Contratos", "Documentos", "Signatures", "Processos", "Almoxarifado", "Empresas", "Endereços", "Parceiros", "Contatos", "Notas Internas", "Licenças", "Licitações", "Contratações Públicas", "QR Codes"]
+    },
+    {
+      "id": "conteudo",
+      "nome": "Conteúdo e educação",
+      "modulos": ["Artigos", "eBooks", "Cursos", "Provas", "Quizzes", "Questionários", "Gamificação", "Slides", "Documentação", "Portfólio", "Filmes", "Bíblia"]
+    },
+    {
+      "id": "ia",
+      "nome": "Inteligência artificial",
+      "modulos": ["IA", "Agentes de IA", "IA Especialista", "Prompt Agente AI", "Redator", "Vozes", "Web Scraping", "Histórico de Pesquisa", "Inteligência Processual", "Jurisprudências", "Score Jurídico", "Google Drive"]
+    },
+    {
+      "id": "segmentos",
+      "nome": "Segmentos prontos",
+      "modulos": ["Restaurantes", "Restaurantes CRM", "Pratos", "Delivery", "Imóveis", "Condomínios", "Empregos", "Vagas de emprego", "Serviços", "Eventos", "Congressos", "Clínicas", "Consultórios", "Consultas", "Médicos", "Pacientes", "Enfermeiros", "Hospitais", "Farmácias", "Medicamentos", "Profissionais de Saúde", "Ambulâncias", "Advogados", "Animais", "Aeroporto", "Prefeituras", "Agenda Gov", "Poker", "Jogadores"]
+    }
+  ],
+  "modelos": [
+    {
+      "id": "rede-social",
+      "nome": "Rede social",
+      "descricao": "Comunidade com feed, stories, chat e moderação.",
+      "modulos": ["Rede Social", "Stories", "Chat", "Mensagens", "Comentários", "Reações", "Favoritos", "Denúncias", "Anúncios", "Lives", "Vídeos"]
+    },
+    {
+      "id": "delivery",
+      "nome": "Delivery",
+      "descricao": "Cardápio, pedidos, pagamento e entrega para restaurantes.",
+      "modulos": ["Restaurantes", "Restaurantes CRM", "Pratos", "Delivery", "Sacola", "Pagamento", "Avaliações", "Fretes", "WhatsApp", "Clientes", "Financeiro"]
+    },
+    {
+      "id": "loja",
+      "nome": "Loja virtual",
+      "descricao": "Catálogo, carrinho, frete, nota fiscal e marketplace.",
+      "modulos": ["eCommerce", "Loja", "Marketplace", "Produtos", "Catálogo", "Categorias", "Atributos", "Sacola", "Pagamento", "Fretes", "Envios", "Nota Fiscal", "Avaliações", "Afiliados", "Precificador"]
+    },
+    {
+      "id": "educacao",
+      "nome": "Cursos online",
+      "descricao": "Aulas em vídeo, provas, gamificação e assinaturas.",
+      "modulos": ["Cursos", "Vídeos", "eBooks", "Provas", "Quizzes", "Questionários", "Gamificação", "Assinaturas", "Planos", "Pagamento", "Lives", "Comentários"]
+    },
+    {
+      "id": "saude",
+      "nome": "Clínicas e saúde",
+      "descricao": "Agenda, consultas, pacientes e atendimento por vídeo.",
+      "modulos": ["Clínicas", "Consultórios", "Consultas", "Médicos", "Pacientes", "Agenda", "Lembretes", "Chamadas", "Documentos", "Medicamentos", "Pagamento"]
+    },
+    {
+      "id": "gestao",
+      "nome": "Gestão e CRM",
+      "descricao": "Funil de vendas, orçamentos, equipe e financeiro.",
+      "modulos": ["CRM", "Leads", "Clientes", "Comercial", "Vendas", "Orçamentos", "Atendimentos", "Tarefas", "Agenda", "Reuniões", "Equipe", "Financeiro", "Contratos", "WhatsApp"]
+    },
+    {
+      "id": "eventos",
+      "nome": "Eventos e ingressos",
+      "descricao": "Inscrições, pagamento e entrada com QR Code.",
+      "modulos": ["Eventos", "Congressos", "Sacola", "Pagamento", "QR Codes", "Agenda", "Lembretes", "Avaliações", "Parceiros", "Campanhas"]
+    },
+    {
+      "id": "ia",
+      "nome": "Produto com IA",
+      "descricao": "Agentes, redação, voz e cobrança por uso.",
+      "modulos": ["IA", "Agentes de IA", "IA Especialista", "Prompt Agente AI", "Redator", "Vozes", "Web Scraping", "Histórico de Pesquisa", "Planos", "Quotas", "Assinaturas"]
+    }
+  ]
+}

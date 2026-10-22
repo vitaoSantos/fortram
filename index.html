@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fortram | Escolha da landing page</title>
+  <meta name="description" content="Página interna para comparar e votar nas três propostas de landing page da Fortram.">
+  <!-- Página interna de votação: fica fora do Google -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#042258">
+  <link rel="icon" href="assets/img/marca/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/marca/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <style>
+    body {
+      background:
+        radial-gradient(50% 40% at 100% 0%, rgb(251 3 169 / 0.1), transparent 70%),
+        radial-gradient(40% 40% at 0% 30%, rgb(47 111 237 / 0.08), transparent 70%),
+        #f5f6fa;
+    }
+
+    .escolha {
+      padding-block: 48px 96px;
+    }
+
+    .escolha__topo {
+      display: grid;
+      gap: 18px;
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .escolha__topo img {
+      width: auto;
+      height: 44px;
+      margin-bottom: 20px;
+    }
+
+    .escolha__topo .etiqueta {
+      justify-self: start;
+    }
+
+    .escolha__topo h1 {
+      font-size: clamp(2.2rem, 1.5rem + 2.8vw, 3.6rem);
+      font-weight: 800;
+    }
+
+    .escolha__topo p {
+      color: var(--texto-suave);
+      font-size: 1.15rem;
+    }
+
+    .versoes {
+      display: grid;
+      gap: 24px;
+    }
+
+    @media (min-width: 1000px) {
+      .versoes {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .versao {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 26px;
+      background: #fff;
+      box-shadow: var(--sombra);
+      transition: transform 0.4s var(--suave), box-shadow 0.4s var(--suave);
+    }
+
+    .versao:hover {
+      box-shadow: var(--sombra-g);
+      transform: translateY(-6px);
+    }
+
+    .versao__imagem {
+      display: block;
+      overflow: hidden;
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .versao__imagem img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      transition: transform 1s var(--suave);
+    }
+
+    .versao:hover .versao__imagem img {
+      transform: scale(1.03);
+    }
+
+    .versao__corpo {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 26px 26px 28px;
+    }
+
+    .versao__numero {
+      color: var(--magenta-forte);
+      font-family: var(--fonte-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .versao h2 {
+      margin-top: 8px;
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .versao__descricao {
+      margin-top: 10px;
+      color: var(--texto-suave);
+    }
+
+    .versao ul {
+      display: grid;
+      gap: 8px;
+      margin: 20px 0 26px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .versao li {
+      display: flex;
+      gap: 10px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .versao li::before {
+      content: "";
+      flex: none;
+      width: 7px;
+      height: 7px;
+      margin-top: 0.6em;
+      border-radius: 50%;
+      background: var(--magenta);
+    }
+
+    .versao .botao {
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    .escolha__nota {
+      max-width: 760px;
+      margin-top: 48px;
+      padding: 20px 24px;
+      border-left: 4px solid var(--azul);
+      border-radius: 6px 18px 18px 6px;
+      background: #fff;
+      color: var(--texto-suave);
+    }
+
+    .escolha__nota b {
+      color: var(--texto);
+    }
+  </style>
+</head>
+<body>
+  <main class="conteudo escolha">
+    <header class="escolha__topo">
+      <img src="assets/img/marca/fortram-logo.svg" alt="Fortram Soluções Digitais" width="186" height="50">
+      <span class="etiqueta">Página interna</span>
+      <h1>Três propostas para a nova landing page</h1>
+      <p>Abra cada versão, navegue até o fim (no computador e no celular) e vote na que melhor apresenta a Fortram e o Nown.</p>
+    </header>
+
+    <div class="versoes">
+      <article class="versao">
+        <a class="versao__imagem" href="v1-corporativa.html" tabindex="-1" aria-hidden="true">
+          <img src="assets/img/versoes/v1-corporativa.webp" alt="" width="960" height="600">
+        </a>
+        <div class="versao__corpo">
+          <p class="versao__numero">Versão 1</p>
+          <h2>Corporativa</h2>
+          <p class="versao__descricao">Profissional e sem 3D, no estilo de sites de produto como os do Itaú, da V4 e do Claude: fundo claro, imagem e texto, com o produto em primeiro plano.</p>
+          <ul>
+            <li>Telas reais dos projetos em molduras de navegador e celular</li>
+            <li>Gerenciador de módulos e manifest do Nown recriados em HTML</li>
+            <li>"Um projeto, vários módulos": a composição de cada projeto</li>
+            <li>Processo em 8 etapas, números, dúvidas e contato</li>
+          </ul>
+          <a class="botao botao--primario" href="v1-corporativa.html">Abrir a versão 1</a>
+        </div>
+      </article>
+
+      <article class="versao">
+        <a class="versao__imagem" href="v2-processo-3d.html" tabindex="-1" aria-hidden="true">
+          <img src="assets/img/versoes/v2-processo-3d.webp" alt="" width="960" height="600">
+        </a>
+        <div class="versao__corpo">
+          <p class="versao__numero">Versão 2</p>
+          <h2>A jornada em 3D</h2>
+          <p class="versao__descricao">O processo da Fortram contado em 3D: a câmera voa de uma etapa para a outra conforme a página rola, do primeiro contato à entrega.</p>
+          <ul>
+            <li>Lebre do logo em 3D na abertura, cercada pelos módulos</li>
+            <li>7 etapas: conversa, gerente, Figma, front-end, back-end, testes e entrega</li>
+            <li>Esfera com os módulos do Nown, que dá para girar com o mouse</li>
+            <li>Projetos como no portfólio: faixa horizontal, filtros e detalhes</li>
+          </ul>
+          <a class="botao botao--primario" href="v2-processo-3d.html">Abrir a versão 2</a>
+        </div>
+      </article>
+
+      <article class="versao">
+        <a class="versao__imagem" href="v3-hibrida.html" tabindex="-1" aria-hidden="true">
+          <img src="assets/img/versoes/v3-hibrida.webp" alt="" width="960" height="600">
+        </a>
+        <div class="versao__corpo">
+          <p class="versao__numero">Versão 3</p>
+          <h2>Híbrida</h2>
+          <p class="versao__descricao">O meio-termo entre as duas: base clara com blocos escuros, um pouco de 3D feito só com CSS e animações leves.</p>
+          <ul>
+            <li>Pilha de telas na abertura: protótipo, código e sistema no ar</li>
+            <li>Processo com uma prévia que muda a cada etapa</li>
+            <li>"Monte seu projeto": os módulos prontos de cada tipo de sistema</li>
+            <li>Projetos em grade, com o principal em destaque</li>
+          </ul>
+          <a class="botao botao--primario" href="v3-hibrida.html">Abrir a versão 3</a>
+        </div>
+      </article>
+    </div>
+
+    <p class="escolha__nota"><b>As três versões usam os mesmos dados</b>: os projetos de <code>data/projetos.json</code>, os módulos de <code>data/modulos.json</code> e o mesmo formulário de contato. Depois da votação, o passo a passo para colocar a versão escolhida como página principal está no arquivo <code>DOCUMENTACAO.md</code> do projeto.</p>
+  </main>
+</body>
+</html>

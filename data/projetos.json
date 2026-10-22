@@ -1,0 +1,143 @@
+{
+  "mostrar_secao": true,
+  "mostrar_modulos": true,
+  "projetos": [
+    {
+      "slug": "facil-aqui",
+      "nome": "Fácil Aqui",
+      "segmento": "Comunidades",
+      "resumo": "Super-app da cidade que reúne rede social, chat, delivery, produtos, serviços, imóveis e vagas de emprego em uma única conta.",
+      "sobre": "Hub digital da cidade: moradores e negócios encontram, em uma única conta, rede social, chat em tempo real, delivery de restaurantes, anúncios de produtos, prestadores de serviço, imóveis e vagas de emprego. Cada seção funciona como um produto próprio, todas sobre a mesma base do Nown.",
+      "destaques": [
+        "Rede social com feed infinito, reações, comentários, comunidades com moderação e anúncios no feed",
+        "Delivery em cidade, restaurante, prato e carrinho, com horário de funcionamento validado em tempo real",
+        "Empregos com match entre vaga e currículo por área, local, salário, regime e formação",
+        "Marketplace de produtos com anúncio em etapas, busca, filtros e contato direto com o anunciante",
+        "Chat e notificações em tempo real",
+        "Planos com cotas de uso e páginas otimizadas para buscadores"
+      ],
+      "modulo_principal": "Fácil Aqui",
+      "modulos": ["Rede Social", "Chat", "Restaurantes", "Delivery", "Produtos", "Marketplace", "Serviços", "Imóveis", "Empregos", "Anúncios", "Notificações", "Planos", "Quotas", "Usuários"],
+      "link": "https://facilaqui.com/",
+      "capa": "assets/img/projetos/facilaqui-1600.webp",
+      "capa_pequena": "assets/img/projetos/facilaqui-800.webp",
+      "destaque": true,
+      "visivel": true,
+      "ordem": 1
+    },
+    {
+      "slug": "amplitur",
+      "nome": "Amplitur",
+      "segmento": "Turismo e eventos",
+      "resumo": "Plataforma de turismo musical: pacotes de viagem para shows e festivais, com checkout completo, três idiomas e quatro moedas.",
+      "sobre": "Site de vendas de uma agência especializada em turismo musical. O cliente escolhe o show ou festival e monta o próprio pacote: transporte em excursão, hospedagem, transfers ou experiências completas, com serviços adicionais por passageiro, contrato digital e pagamento por cartão, Pix ou boleto.",
+      "destaques": [
+        "Checkout em 4 etapas com quatro modalidades: transporte, hospedagem, shuttle e experience",
+        "Português, inglês e espanhol, com preços em real, dólar, euro e libra",
+        "Navegação sem recarregar a página e instalação como aplicativo",
+        "Área do cliente com mapa de assentos do ônibus, troca de passageiro, Pix com QR Code e documentos",
+        "Vouchers, contratos e boletos entregues somente para quem está logado",
+        "Respostas da API da agência guardadas em cache para a página abrir rápido"
+      ],
+      "modulo_principal": "Amplitour",
+      "modulos": ["Eventos", "Pagamento", "Contratos", "Documentos", "Usuários", "Notificações"],
+      "link": "https://fortram.site/htmls/amplitur/pt",
+      "capa": "assets/img/projetos/amplitur-1600.webp",
+      "capa_pequena": "assets/img/projetos/amplitur-800.webp",
+      "destaque": true,
+      "visivel": true,
+      "ordem": 2
+    },
+    {
+      "slug": "nestory",
+      "nome": "Nestory",
+      "segmento": "Educação",
+      "resumo": "Plataforma de histórias infantis para a família, com produção editorial completa e gamificação para as crianças.",
+      "sobre": "Plataforma para pais e filhos lerem e ouvirem histórias juntos, em texto, áudio, PDF e vídeo. De um lado, uma equipe editorial produz e revisa o acervo. Do outro, a família consome as histórias, e a criança ganha estrelas e medalhas ao responder um quiz no fim de cada uma.",
+      "destaques": [
+        "Fluxo editorial em 7 etapas, do rascunho à publicação, com permissões por papel: autor, editor, revisor e gerente",
+        "Cada troca de status avisa as pessoas certas por notificação no app, push e e-mail",
+        "Gamificação com quiz no fim da história, estrelas por acerto e medalhas configuráveis",
+        "Correção do quiz feita no servidor, sem expor o gabarito no navegador",
+        "Quatro planos de assinatura, incluindo um plano educacional com instituições, salas e alunos",
+        "\"Continue de onde parou\", fascículos e recomendações pelo gosto de cada criança"
+      ],
+      "modulo_principal": "Nestory",
+      "modulos": ["Usuários", "Pagamento", "Assinaturas", "Planos", "Permissões", "Notificações", "Quizzes", "Gamificação", "Vídeos"],
+      "link": "https://nestory.fortram.site/",
+      "capa": "assets/img/projetos/nestory-1600.webp",
+      "capa_pequena": "assets/img/projetos/nestory-800.webp",
+      "destaque": true,
+      "visivel": true,
+      "ordem": 3
+    },
+    {
+      "slug": "flop-poker",
+      "nome": "Flop Poker",
+      "segmento": "Turismo e eventos",
+      "resumo": "Inscrições online e hospedagem para um festival de torneios de poker, com pagamento por Pix e voucher em QR Code.",
+      "sobre": "Plataforma do Flop Poker Tour. O jogador conhece os eventos, vê a programação e a estrutura de blinds de cada torneio, faz a inscrição com Pix ou cartão e reserva o quarto no hotel oficial do evento. A organização gerencia tudo por um painel próprio.",
+      "destaques": [
+        "Inscrição online em torneios com Pix ou cartão e vaga reservada por tempo limitado durante o pagamento",
+        "Confirmação da inscrição com voucher em QR Code",
+        "Reserva de hospedagem no hotel oficial, inclusive quartos compartilhados com amigos",
+        "Programação dos eventos com filtros e a estrutura de blinds de cada torneio",
+        "Área do jogador com torneios, reservas e compras",
+        "Painel de gestão de eventos, torneios, locais, quartos e e-mails de confirmação"
+      ],
+      "modulo_principal": "Flop",
+      "modulos": ["Poker", "Eventos", "Jogadores", "Sacola", "Pagamento", "QR Codes", "Usuários", "Notificações"],
+      "link": "https://floppoker.com.br/",
+      "capa": "assets/img/projetos/floppoker-1600.webp",
+      "capa_pequena": "assets/img/projetos/floppoker-800.webp",
+      "destaque": true,
+      "visivel": true,
+      "ordem": 4
+    },
+    {
+      "slug": "toylog",
+      "nome": "Toylog",
+      "segmento": "Inteligência artificial",
+      "resumo": "App para colecionadores: a partir de uma foto, a IA identifica o item, preenche a ficha e estima o valor de mercado.",
+      "sobre": "Plataforma para catalogar coleções de brinquedos, cards, moedas e jogos retrô. O usuário envia a foto do item, a inteligência artificial reconhece o que é, categoriza e estima o valor de mercado. Depois é só revisar, publicar e, se quiser, anunciar para outros colecionadores.",
+      "destaques": [
+        "Reconhecimento do item pela foto com IA (Google Gemini) e respostas estruturadas",
+        "Ficha automática com nome, fabricante, série, ano, material, raridade, condição e categoria",
+        "Estimativa de valor em reais, tendência de demanda e recomendação de manter ou vender, com nível de confiança",
+        "Coleções e catálogo com filtros, além de páginas públicas do item e do colecionador",
+        "Planos gratuito, básico e premium, com painel de receita, churn e conversão"
+      ],
+      "modulo_principal": "ToyLog",
+      "modulos": ["IA", "Catálogo", "Categorias", "Anúncios", "Planos", "Assinaturas", "Analytics", "Perfil"],
+      "link": "https://toylog.fortram.site/",
+      "capa": "assets/img/projetos/toylog-1600.webp",
+      "capa_pequena": "assets/img/projetos/toylog-800.webp",
+      "destaque": true,
+      "visivel": true,
+      "ordem": 5
+    },
+    {
+      "slug": "sala-do-rei",
+      "nome": "Sala do Rei",
+      "segmento": "Comunidades",
+      "resumo": "Plataforma para igrejas com relógio de oração, Bíblia online, pedidos de oração e chamadas de vídeo em grupo.",
+      "sobre": "Criada para uma igreja e pronta para atender qualquer comunidade de fé. Os membros se organizam em relógios de oração, compartilham pedidos, leem a Bíblia na própria plataforma e se reúnem em chamadas de vídeo em grupo.",
+      "destaques": [
+        "Relógio de oração com horários em grupo, agenda e lembretes",
+        "Bíblia online com várias traduções, favoritos, destaques e histórico de leitura",
+        "Chamadas de voz e vídeo em grupo direto no navegador",
+        "Pedidos de oração com comentários e participantes",
+        "Diário devocional ligado aos versículos",
+        "Painel com engajamento, distribuição por região e horários mais procurados"
+      ],
+      "modulo_principal": "Hora da Fé",
+      "modulos": ["Bíblia", "Chamadas", "Agenda", "Lembretes", "Comentários", "Notificações", "Dashboards", "Usuários"],
+      "link": "https://saladorei.com.br/",
+      "capa": "assets/img/projetos/saladorei-1600.webp",
+      "capa_pequena": "assets/img/projetos/saladorei-800.webp",
+      "destaque": false,
+      "visivel": true,
+      "ordem": 6
+    }
+  ]
+}
