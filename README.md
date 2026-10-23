@@ -1,11 +1,12 @@
 # Landing pages da Fortram
 
-Três propostas de landing page para a Fortram e o Nown, para a votação interna:
+Quatro propostas de landing page para a Fortram e o Nown, para a votação interna:
 
 - `v1-corporativa.html`: corporativa, sem 3D
 - `v2-processo-3d.html`: o processo da Fortram contado em 3D
 - `v3-hibrida.html`: o meio-termo entre as duas
-- `index.html`: página interna para comparar as três
+- `v4-institucional.html`: institucional, feita a partir do site de referência enviado pela equipe
+- `index.html`: página interna para comparar as quatro
 
 Feitas com HTML, CSS, JavaScript puro e PHP, sem compilação: os arquivos desta pasta são os mesmos que vão para o servidor.
 

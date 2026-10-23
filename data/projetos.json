@@ -7,6 +7,7 @@
       "nome": "Fácil Aqui",
       "segmento": "Comunidades",
       "resumo": "Super-app da cidade que reúne rede social, chat, delivery, produtos, serviços, imóveis e vagas de emprego em uma única conta.",
+      "chamada": "Uma cidade inteira em *um só app*",
       "sobre": "Hub digital da cidade: moradores e negócios encontram, em uma única conta, rede social, chat em tempo real, delivery de restaurantes, anúncios de produtos, prestadores de serviço, imóveis e vagas de emprego. Cada seção funciona como um produto próprio, todas sobre a mesma base do Nown.",
       "destaques": [
         "Rede social com feed infinito, reações, comentários, comunidades com moderação e anúncios no feed",
@@ -30,6 +31,7 @@
       "nome": "Amplitur",
       "segmento": "Turismo e eventos",
       "resumo": "Plataforma de turismo musical: pacotes de viagem para shows e festivais, com checkout completo, três idiomas e quatro moedas.",
+      "chamada": "Turismo musical em *três idiomas e quatro moedas*",
       "sobre": "Site de vendas de uma agência especializada em turismo musical. O cliente escolhe o show ou festival e monta o próprio pacote: transporte em excursão, hospedagem, transfers ou experiências completas, com serviços adicionais por passageiro, contrato digital e pagamento por cartão, Pix ou boleto.",
       "destaques": [
         "Checkout em 4 etapas com quatro modalidades: transporte, hospedagem, shuttle e experience",
@@ -53,6 +55,7 @@
       "nome": "Nestory",
       "segmento": "Educação",
       "resumo": "Plataforma de histórias infantis para a família, com produção editorial completa e gamificação para as crianças.",
+      "chamada": "Histórias que *educam e encantam* a família",
       "sobre": "Plataforma para pais e filhos lerem e ouvirem histórias juntos, em texto, áudio, PDF e vídeo. De um lado, uma equipe editorial produz e revisa o acervo. Do outro, a família consome as histórias, e a criança ganha estrelas e medalhas ao responder um quiz no fim de cada uma.",
       "destaques": [
         "Fluxo editorial em 7 etapas, do rascunho à publicação, com permissões por papel: autor, editor, revisor e gerente",
@@ -76,6 +79,7 @@
       "nome": "Flop Poker",
       "segmento": "Turismo e eventos",
       "resumo": "Inscrições online e hospedagem para um festival de torneios de poker, com pagamento por Pix e voucher em QR Code.",
+      "chamada": "Inscrição, Pix e hotel em *um só lugar*",
       "sobre": "Plataforma do Flop Poker Tour. O jogador conhece os eventos, vê a programação e a estrutura de blinds de cada torneio, faz a inscrição com Pix ou cartão e reserva o quarto no hotel oficial do evento. A organização gerencia tudo por um painel próprio.",
       "destaques": [
         "Inscrição online em torneios com Pix ou cartão e vaga reservada por tempo limitado durante o pagamento",
@@ -99,6 +103,7 @@
       "nome": "Toylog",
       "segmento": "Inteligência artificial",
       "resumo": "App para colecionadores: a partir de uma foto, a IA identifica o item, preenche a ficha e estima o valor de mercado.",
+      "chamada": "A IA que *reconhece coleções* pela foto",
       "sobre": "Plataforma para catalogar coleções de brinquedos, cards, moedas e jogos retrô. O usuário envia a foto do item, a inteligência artificial reconhece o que é, categoriza e estima o valor de mercado. Depois é só revisar, publicar e, se quiser, anunciar para outros colecionadores.",
       "destaques": [
         "Reconhecimento do item pela foto com IA (Google Gemini) e respostas estruturadas",
@@ -121,6 +126,7 @@
       "nome": "Sala do Rei",
       "segmento": "Comunidades",
       "resumo": "Plataforma para igrejas com relógio de oração, Bíblia online, pedidos de oração e chamadas de vídeo em grupo.",
+      "chamada": "Fé e comunidade *sempre conectadas*",
       "sobre": "Criada para uma igreja e pronta para atender qualquer comunidade de fé. Os membros se organizam em relógios de oração, compartilham pedidos, leem a Bíblia na própria plataforma e se reúnem em chamadas de vídeo em grupo.",
       "destaques": [
         "Relógio de oração com horários em grupo, agenda e lembretes",

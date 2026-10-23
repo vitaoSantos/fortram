@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fortram | Desenvolvimento de sistemas, aplicativos e SaaS</title>
+  <meta name="description" content="A Fortram cria e evolui sistemas, aplicativos e SaaS sob medida, sobre o Nown, a plataforma própria com 273 módulos prontos. Gerente de projetos dedicado e equipe especialista em cada etapa.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Fortram Soluções Digitais">
+  <meta property="og:description" content="Soluções completas para criar e evoluir o software da sua empresa, sobre uma base com 273 módulos prontos.">
+  <!-- Troque pelo endereço completo do site ao publicar (ex.: https://fortram.site/assets/img/og/fortram.jpg) -->
+  <meta property="og:image" content="assets/img/og/fortram.jpg">
+  <link rel="icon" href="assets/img/marca/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/marca/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/inter-variavel.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/v4.css">
+  <script type="module" src="assets/js/v4.js"></script>
+</head>
+<body class="v4">
+  <!-- Ícones usados na página: cada um é desenhado uma vez aqui e reaproveitado com <use href="#i-nome"> -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+    <symbol id="i-seta-cima" viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></symbol>
+    <symbol id="i-anterior" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.2 2.4 2.4 4.6-4.9"/></symbol>
+    <symbol id="i-busca" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-usuario" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-usuarios" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 20a7 7 0 0 0-4.5-6.5"/></symbol>
+    <symbol id="i-mensagem" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-cartao" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></symbol>
+    <symbol id="i-sino" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+    <symbol id="i-grafico" viewBox="0 0 24 24"><path d="M5 20V12M12 20V5M19 20v-9"/></symbol>
+    <symbol id="i-robo" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01"/></symbol>
+    <symbol id="i-maleta" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-entrega" viewBox="0 0 24 24"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+    <symbol id="i-camadas" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></symbol>
+    <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3 4.5 6v6c0 4.5 3.2 7.8 7.5 9 4.3-1.2 7.5-4.5 7.5-9V6L12 3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+    <symbol id="i-monitor-check" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9 10 2 2 4-4"/></symbol>
+    <symbol id="i-dispositivos" viewBox="0 0 24 24"><rect x="2" y="4" width="14" height="10" rx="1.5"/><rect x="15" y="8" width="7" height="12" rx="1.5"/><path d="M6 18h6"/></symbol>
+    <symbol id="i-caneta" viewBox="0 0 24 24"><path d="M12 19 4.5 21l2-7.5L17 3l4 4L10.5 17.5"/><path d="m15 5 4 4"/></symbol>
+    <symbol id="i-codigo" viewBox="0 0 24 24"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"/></symbol>
+    <symbol id="i-banco" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+    <symbol id="i-foguete" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1Z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2Z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+    <symbol id="i-prancheta" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+    <symbol id="i-selo" viewBox="0 0 24 24"><path d="M12 2.5 14.5 4.6l3.2-.3.9 3.1 2.8 1.6-1.1 3 1.1 3-2.8 1.6-.9 3.1-3.2-.3L12 21.5l-2.5-2.1-3.2.3-.9-3.1-2.8-1.6 1.1-3-1.1-3 2.8-1.6.9-3.1 3.2.3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  </svg>
+
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="conteudo topo__conteudo">
+      <a class="topo__logo" href="#inicio" aria-label="Fortram, voltar ao início">
+        <img src="assets/img/marca/fortram-logo.svg" alt="Fortram Soluções Digitais" width="186" height="50">
+      </a>
+      <nav class="topo__menu" aria-label="Principal">
+        <ul>
+          <li class="topo__item-menu">
+            <button class="topo__submenu-botao" type="button" aria-expanded="false" aria-controls="submenu-solucoes">
+              Soluções <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </button>
+            <ul id="submenu-solucoes" class="topo__submenu">
+              <li><a href="#solucoes">Para quem está começando</a></li>
+              <li><a href="#solucoes">Para empresas em operação</a></li>
+              <li><a href="#recursos">O que já vem pronto</a></li>
+              <li><a href="#segmentos">Soluções por segmento</a></li>
+            </ul>
+          </li>
+          <li><a href="#nown">Nown</a></li>
+          <li><a href="#processo">Como trabalhamos</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#duvidas">Dúvidas</a></li>
+        </ul>
+      </nav>
+      <div class="topo__acoes">
+        <a class="topo__whatsapp" data-whatsapp hidden href="#">WhatsApp</a>
+        <a class="botao botao--primario" href="#contato" data-abrir-contato>Começar meu projeto</a>
+        <button class="topo__abrir-menu" type="button" aria-controls="menu-celular" aria-expanded="false" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="menu-celular" class="menu-celular" aria-label="Menu">
+    <ul>
+      <li><a href="#solucoes">Soluções</a></li>
+      <li><a href="#nown">Nown</a></li>
+      <li><a href="#processo">Como trabalhamos</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+    </ul>
+    <a class="botao botao--primario" href="#contato" data-abrir-contato>Começar meu projeto</a>
+  </nav>
+
+  <main id="conteudo">
+    <!-- ===================== Abertura ===================== -->
+    <section id="inicio" class="hero">
+      <div class="conteudo hero__grade">
+        <div class="hero__texto">
+          <p class="sobretitulo">Desenvolvimento de software</p>
+          <h1>Soluções completas para criar e evoluir o software da sua empresa</h1>
+          <p class="hero__lead">Sistemas web, <b>aplicativos</b> e <b>SaaS</b> sob medida, construídos sobre o Nown, a nossa plataforma com <b><span data-total-modulos>273</span> módulos prontos</b>. Com gerente de projetos dedicado e uma equipe especialista em cada etapa.</p>
+          <div class="hero__acoes">
+            <a class="botao botao--primario botao--grande" href="#contato" data-abrir-contato>Começar meu projeto</a>
+            <a class="botao botao--branco botao--grande" href="#nown">Conhecer o Nown</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <span class="hero__barra hero__barra--1"></span>
+          <span class="hero__barra hero__barra--2"></span>
+
+          <!-- Para usar uma foto da equipe no lugar da tela: troque o conteúdo do palco por
+               <img class="hero__foto" src="assets/img/..." alt=""> -->
+          <div class="hero__palco">
+            <div class="navegador hero__janela">
+              <div class="navegador__barra"><i></i><i></i><i></i><span class="navegador__endereco">facilaqui.com</span></div>
+              <img src="assets/img/projetos/facilaqui-1600.webp" alt="" width="1600" height="1000" fetchpriority="high">
+            </div>
+          </div>
+
+          <div class="tablet hero__tablet">
+            <div class="painel">
+              <div class="painel__barra">
+                <img src="assets/img/marca/nown-logo.svg" alt="" width="83" height="20">
+                <span class="painel__busca-topo"></span>
+                <span class="painel__avatar"></span>
+              </div>
+              <div class="painel__corpo">
+                <div class="painel__menu">
+                  <span class="painel__secao">Administração</span>
+                  <span>Clientes</span>
+                  <span>Dashboards</span>
+                  <span class="ativo">Módulos</span>
+                  <span>Traduções</span>
+                  <span>Versionador</span>
+                </div>
+                <div class="painel__principal">
+                  <div class="painel__cabecalho">
+                    <p><b>Gerenciador de Módulos</b><small><span data-total-modulos>273</span> módulos instalados</small></p>
+                    <span class="painel__novo">+ Criar módulo</span>
+                  </div>
+                  <p class="painel__procura">Procure pelo módulo</p>
+                  <ul class="painel__grade">
+                    <li class="t1"><i><svg class="i"><use href="#i-calendario"/></svg></i><span><b>Agenda</b><small>/agenda</small></span></li>
+                    <li class="t2"><i><svg class="i"><use href="#i-robo"/></svg></i><span><b>Agentes de IA</b><small>/agentes-de-ia</small></span></li>
+                    <li class="t3"><i><svg class="i"><use href="#i-grafico"/></svg></i><span><b>Analytics</b><small>/analytics</small></span></li>
+                    <li class="t5"><i><svg class="i"><use href="#i-mensagem"/></svg></i><span><b>Chat</b><small>/chat</small></span></li>
+                    <li class="t6"><i><svg class="i"><use href="#i-maleta"/></svg></i><span><b>CRM</b><small>/crm</small></span></li>
+                    <li class="t4"><i><svg class="i"><use href="#i-cartao"/></svg></i><span><b>Pagamento</b><small>/pagamento</small></span></li>
+                    <li class="t3"><i><svg class="i"><use href="#i-entrega"/></svg></i><span><b>Delivery</b><small>/delivery</small></span></li>
+                    <li class="t4"><i><svg class="i"><use href="#i-sino"/></svg></i><span><b>Notificações</b><small>/notificacoes</small></span></li>
+                    <li class="t6"><i><svg class="i"><use href="#i-usuarios"/></svg></i><span><b>Rede Social</b><small>/rede-social</small></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__selo">
+            <p class="hero__selo-numero"><small>Módulos</small><b><span data-total-modulos>273</span></b><small>prontos</small></p>
+            <p class="hero__selo-texto">Na base de todo projeto</p>
+            <p class="hero__selo-rodape"><img src="assets/img/marca/nown-logo.svg" alt="" width="58" height="14"> plataforma própria</p>
+          </div>
+          <span class="hero__icone"><svg class="i"><use href="#i-camadas"/></svg></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Soluções ===================== -->
+    <section id="solucoes" class="solucoes">
+      <div class="conteudo solucoes__grade">
+        <header class="solucoes__topo" data-revelar>
+          <p class="sobretitulo sobretitulo--claro">Descubra nossas soluções</p>
+          <h2>Do primeiro protótipo ao sistema no ar, <span class="realce">você não está sozinho</span></h2>
+        </header>
+
+        <article class="solucao solucao--clara" data-revelar>
+          <p class="sobretitulo">Novo produto</p>
+          <h3>Tire a sua ideia do papel do jeito certo</h3>
+          <p>Com a Fortram, a sua ideia vira um sistema com <b>protótipo aprovado por você</b>, equipe dedicada e uma base pronta, <b>sem começar do zero</b>.</p>
+          <a class="botao botao--primario" href="#contato" data-abrir-contato data-tipo="Aplicativo">Começar meu projeto</a>
+          <div class="solucao__imagem" aria-hidden="true">
+            <div class="mock-figma">
+              <div class="mock-figma__tela"><i class="topo-azul"></i><i class="imagem"></i><i></i><i class="curta"></i><i class="botao-rosa"></i></div>
+              <div class="mock-figma__tela"><i class="topo-azul"></i><i class="imagem"></i><i></i><i class="curta"></i><i class="botao-rosa"></i></div>
+              <div class="mock-figma__tela"><i class="topo-rosa"></i><i></i><i class="curta"></i><i></i><i class="botao-verde"></i></div>
+              <span class="mock-figma__comentario">Pode usar o rosa da marca aqui?</span>
+              <span class="mock-figma__aprovado"><svg class="i"><use href="#i-check"/></svg> Protótipo aprovado</span>
+            </div>
+          </div>
+          <ul class="lista-check">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Protótipo no Figma antes do código</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Gerente de projetos só seu</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Web, iOS, Android e computador</li>
+          </ul>
+        </article>
+
+        <article class="solucao solucao--escura" data-revelar>
+          <p class="sobretitulo sobretitulo--claro">Empresa em operação</p>
+          <h3>Precisa de um sistema sob medida para a sua empresa?</h3>
+          <p>Criamos <b>sistemas de gestão, CRMs e integrações</b> que organizam a sua operação e conversam com as ferramentas que você já usa.</p>
+          <a class="botao botao--primario" href="#contato" data-abrir-contato data-tipo="Sistema web ou plataforma">Falar com um especialista</a>
+          <div class="solucao__imagem" aria-hidden="true">
+            <div class="mock-kanban">
+              <div class="mock-kanban__coluna">
+                <p>Novos <i>3</i></p>
+                <span><b>Novo contato</b><small>Site · agora</small></span>
+                <span><b>Orçamento</b><small>WhatsApp · 5 min</small></span>
+              </div>
+              <div class="mock-kanban__coluna">
+                <p>Em curso <i>2</i></p>
+                <span><b>Reunião marcada</b><small>Agenda · amanhã</small></span>
+                <span class="destaque"><b>Proposta enviada</b><small>Orçamento #1042</small></span>
+              </div>
+              <div class="mock-kanban__coluna">
+                <p>Fechados <i>4</i></p>
+                <span class="ok"><b>Contrato assinado</b><small>Financeiro</small></span>
+              </div>
+            </div>
+          </div>
+          <ul class="lista-check">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Gestão, CRM, agenda e financeiro</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Integração com WhatsApp e pagamentos</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Agentes de IA com os dados do seu negócio</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== O que já vem pronto ===================== -->
+    <section id="recursos" class="secao recursos">
+      <div class="conteudo">
+        <header class="secao-cabecalho" data-revelar>
+          <h2><span class="realce">Tudo o que o seu sistema precisa</span> já vem pronto</h2>
+          <p>Incluído em <b>todos os projetos</b> feitos sobre o Nown</p>
+        </header>
+
+        <ul class="bento" data-revelar-cascata>
+          <li class="recurso recurso--largo recurso--projetos">
+            <div class="recurso__visual" aria-hidden="true">
+              <div class="mock-colagem">
+                <img src="assets/img/projetos/amplitur-800.webp" alt="" width="800" height="500" loading="lazy">
+                <img src="assets/img/projetos/nestory-800.webp" alt="" width="800" height="500" loading="lazy">
+                <img src="assets/img/projetos/toylog-800.webp" alt="" width="800" height="500" loading="lazy">
+                <img src="assets/img/projetos/floppoker-800.webp" alt="" width="800" height="500" loading="lazy">
+              </div>
+            </div>
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-codigo"/></svg>Desenvolvimento</span>
+            <div class="recurso__texto">
+              <h3>Sistemas sob medida, do jeito certo</h3>
+              <p>Do protótipo à entrega: telas, regras e integrações feitas para o seu negócio, sobre uma base pronta e testada.</p>
+            </div>
+          </li>
+
+          <li class="recurso recurso--telas">
+            <div class="recurso__visual" aria-hidden="true">
+              <div class="mock-telas">
+                <span class="mock-telas__notebook"><i></i></span>
+                <span class="mock-telas__celular"><i></i></span>
+                <span class="mock-telas__pino"><svg class="i"><use href="#i-dispositivos"/></svg></span>
+              </div>
+            </div>
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-dispositivos"/></svg>Multiplataforma</span>
+            <div class="recurso__texto">
+              <h3>Web, iOS, Android e desktop</h3>
+              <p>Um único código entrega o seu sistema no navegador, no celular e no computador.</p>
+            </div>
+          </li>
+
+          <li class="recurso recurso--pagamentos">
+            <div class="recurso__visual" aria-hidden="true">
+              <div class="mock-cartoes">
+                <span class="mock-cartao mock-cartao--escuro"><i class="mock-cartao__chip"></i><b>Pix · Crédito</b><small>•••• 0412</small></span>
+                <span class="mock-cartao mock-cartao--rosa"><i class="mock-cartao__chip"></i><b>Sua marca</b><small>•••• 2048</small></span>
+              </div>
+            </div>
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-cartao"/></svg>Pagamentos</span>
+            <div class="recurso__texto">
+              <h3>Pagamentos descomplicados</h3>
+              <p>Pix, cartão, boleto, planos e assinaturas prontos para o seu sistema vender.</p>
+            </div>
+          </li>
+
+          <li class="recurso recurso--notificacoes">
+            <div class="recurso__visual" aria-hidden="true">
+              <div class="mock-avisos">
+                <p><i class="verde"><svg class="i"><use href="#i-check"/></svg></i><span><b>Pagamento aprovado</b><small>Pedido #2048 · agora</small></span></p>
+                <p><i class="rosa"><svg class="i"><use href="#i-mensagem"/></svg></i><span><b>Nova mensagem</b><small>Chat do pedido · 2 min</small></span></p>
+                <p><i class="azul"><svg class="i"><use href="#i-usuario"/></svg></i><span><b>Novo cadastro</b><small>Plano Premium · 5 min</small></span></p>
+                <p><i class="amarelo"><svg class="i"><use href="#i-sino"/></svg></i><span><b>Lembrete enviado</b><small>Agenda · 12 min</small></span></p>
+              </div>
+            </div>
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-sino"/></svg>Notificações</span>
+            <div class="recurso__texto">
+              <h3>Sempre avisado</h3>
+              <p>Notificações no app, por push e por e-mail, além de chat e chamadas de vídeo em tempo real.</p>
+            </div>
+          </li>
+
+          <li class="recurso recurso--largo recurso--modulos">
+            <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-camadas"/></svg>Nown</span>
+            <ul class="mock-icones" aria-hidden="true">
+              <li class="t1"><svg class="i"><use href="#i-usuarios"/></svg><small>Usuários</small></li>
+              <li class="t4"><svg class="i"><use href="#i-cartao"/></svg><small>Pagamento</small></li>
+              <li class="t5"><svg class="i"><use href="#i-mensagem"/></svg><small>Chat</small></li>
+              <li class="t1"><svg class="i"><use href="#i-calendario"/></svg><small>Agenda</small></li>
+              <li class="t6"><svg class="i"><use href="#i-maleta"/></svg><small>CRM</small></li>
+              <li class="t4"><svg class="i"><use href="#i-sino"/></svg><small>Notificações</small></li>
+              <li class="t3"><svg class="i"><use href="#i-grafico"/></svg><small>Analytics</small></li>
+              <li class="t2"><svg class="i"><use href="#i-robo"/></svg><small>Agentes de IA</small></li>
+              <li class="t3"><svg class="i"><use href="#i-usuarios"/></svg><small>Rede Social</small></li>
+              <li class="t5"><svg class="i"><use href="#i-entrega"/></svg><small>Delivery</small></li>
+            </ul>
+            <div class="recurso__texto">
+              <h3><span data-total-modulos>273</span> módulos prontos</h3>
+              <p>Usuários, pagamentos, chat, agenda, CRM, IA e muito mais: o que todo sistema precisa já existe no Nown. <button class="link-acao" type="button" data-abrir-modulos>Ver os módulos <svg class="i" aria-hidden="true"><use href="#i-seta"/></svg></button></p>
+            </div>
+          </li>
+
+          <li class="recurso recurso--painel">
+            <div class="recurso__visual" aria-hidden="true">
+              <div class="recurso__painel">
+                <div class="painel">
+                  <div class="painel__barra">
+                    <img src="assets/img/marca/nown-logo.svg" alt="" width="83" height="20">
+                    <span class="painel__busca-topo"></span>
+                  </div>
+                  <div class="painel__corpo">
+                    <div class="painel__menu">
+                      <span class="painel__secao">Administração</span>
+                      <span>Clientes</span>
+                      <span class="ativo">Módulos</span>
+                      <span>Dashboards</span>
+                      <span>Formulários</span>
+                    </div>
+                    <div class="painel__principal">
+                      <div class="painel__cabecalho"><p><b>Módulos</b><small>Gerenciador</small></p></div>
+                      <ul class="painel__grade">
+                        <li class="t1"><i><svg class="i"><use href="#i-calendario"/></svg></i><span><b>Agenda</b><small>/agenda</small></span></li>
+                        <li class="t5"><i><svg class="i"><use href="#i-mensagem"/></svg></i><span><b>Chat</b><small>/chat</small></span></li>
+                        <li class="t4"><i><svg class="i"><use href="#i-cartao"/></svg></i><span><b>Pagamento</b><small>/pagamento</small></span></li>
+                        <li class="t6"><i><svg class="i"><use href="#i-maleta"/></svg></i><span><b>CRM</b><small>/crm</small></span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="tag tag--clara"><svg class="i" aria-hidden="true"><use href="#i-monitor"/></svg>Plataforma</span>
+            <div class="recurso__texto">
+              <h3>Tudo em um só painel</h3>
+              <p>Tabelas e telas de administração geradas a partir de cada módulo: a sua equipe cuida de tudo em um só lugar.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== Nown ===================== -->
+    <section id="nown" class="secao plataforma">
+      <div class="conteudo">
+        <header class="secao-cabecalho secao-cabecalho--acao" data-revelar>
+          <div>
+            <h2>Conheça o Nown,<br><span class="realce">a plataforma por trás de cada projeto</span></h2>
+            <p>Usuários, pagamentos, notificações, chat e muito mais: são <span data-total-modulos>273</span> módulos em uma base única, testada em produção.</p>
+          </div>
+          <button class="botao botao--primario" type="button" data-abrir-modulos>Ver os módulos</button>
+        </header>
+
+        <div class="vitrine" data-revelar>
+          <div class="vitrine__tela" aria-hidden="true">
+            <div class="painel">
+              <div class="painel__barra">
+                <img src="assets/img/marca/nown-logo.svg" alt="" width="83" height="20">
+                <span class="painel__busca-topo"></span>
+                <span class="painel__avatar"></span>
+              </div>
+              <div class="painel__corpo">
+                <div class="painel__menu">
+                  <span class="painel__secao">Administração</span>
+                  <span>Clientes</span>
+                  <span>Dashboards</span>
+                  <span>Formulários</span>
+                  <span class="ativo">Módulos</span>
+                  <span>Traduções</span>
+                  <span>Versionador</span>
+                  <span class="painel__secao">Conta</span>
+                  <span>Perfil</span>
+                  <span>Suporte</span>
+                </div>
+                <div class="painel__principal">
+                  <div class="painel__cabecalho">
+                    <p><b>Gerenciador de Módulos</b><small><span data-total-modulos>273</span> módulos instalados</small></p>
+                    <span class="painel__novo">+ Criar novo módulo</span>
+                  </div>
+                  <p class="painel__procura">Procure pelo módulo</p>
+                  <ul class="painel__grade">
+                    <li class="t1"><i><svg class="i"><use href="#i-calendario"/></svg></i><span><b>Agenda</b><small>/agenda</small></span></li>
+                    <li class="t2"><i><svg class="i"><use href="#i-robo"/></svg></i><span><b>Agentes de IA</b><small>/agentes-de-ia</small></span></li>
+                    <li class="t3"><i><svg class="i"><use href="#i-grafico"/></svg></i><span><b>Analytics</b><small>/analytics</small></span></li>
+                    <li class="t4"><i><svg class="i"><use href="#i-camadas"/></svg></i><span><b>Assinaturas</b><small>/assinaturas</small></span></li>
+                    <li class="t5"><i><svg class="i"><use href="#i-mensagem"/></svg></i><span><b>Chat</b><small>/chat</small></span></li>
+                    <li class="t6"><i><svg class="i"><use href="#i-maleta"/></svg></i><span><b>CRM</b><small>/crm</small></span></li>
+                    <li class="t3"><i><svg class="i"><use href="#i-entrega"/></svg></i><span><b>Delivery</b><small>/delivery</small></span></li>
+                    <li class="t1"><i><svg class="i"><use href="#i-usuario"/></svg></i><span><b>Empregos</b><small>/empregos</small></span></li>
+                    <li class="t4"><i><svg class="i"><use href="#i-sino"/></svg></i><span><b>Notificações</b><small>/notificacoes</small></span></li>
+                    <li class="t2"><i><svg class="i"><use href="#i-cartao"/></svg></i><span><b>Pagamento</b><small>/pagamento</small></span></li>
+                    <li class="t6"><i><svg class="i"><use href="#i-usuarios"/></svg></i><span><b>Rede Social</b><small>/rede-social</small></span></li>
+                    <li class="t5"><i><svg class="i"><use href="#i-escudo"/></svg></i><span><b>Segurança</b><small>/seguranca</small></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <span class="vitrine__busca"><svg class="i"><use href="#i-busca"/></svg></span>
+          </div>
+
+          <div class="vitrine__cartao">
+            <p>Tudo em um só lugar</p>
+            <button class="vitrine__acao" type="button" data-abrir-modulos><svg class="i" aria-hidden="true"><use href="#i-busca"/></svg>Procurar um módulo</button>
+            <svg class="vitrine__selo" viewBox="0 0 120 120" aria-hidden="true">
+              <circle cx="60" cy="60" r="50" fill="#fff" stroke="#eef0f6" stroke-width="8"/>
+              <path d="M60 10a50 50 0 0 1 49 41" fill="none" stroke="#d4008a" stroke-width="8" stroke-linecap="round"/>
+              <path d="m98 46 11 7 7-12" fill="none" stroke="#d4008a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              <g fill="none" stroke="#0b1736" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="38" y="40" width="44" height="30" rx="5"/><path d="M52 82h16M60 70v12"/></g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Diferenciais ===================== -->
+    <section class="diferenciais">
+      <div class="conteudo">
+        <div class="diferenciais__grade">
+          <div class="diferenciais__texto" data-revelar>
+            <p class="sobretitulo sobretitulo--claro">Por que a Fortram</p>
+            <h2>O que torna a <span class="realce">Fortram</span> diferente</h2>
+            <p>A maioria das empresas entrega código. A Fortram entrega o seu sistema funcionando, com uma equipe acompanhando cada etapa e uma base testada em produção.</p>
+          </div>
+          <ul class="diferenciais__lista" data-revelar-cascata>
+            <li><span class="diferenciais__icone"><svg class="i" aria-hidden="true"><use href="#i-prancheta"/></svg></span><span>Gerente de projetos em toda a jornada</span></li>
+            <li><span class="diferenciais__icone"><svg class="i" aria-hidden="true"><use href="#i-caneta"/></svg></span><span>Protótipo aprovado antes do código</span></li>
+            <li><span class="diferenciais__icone"><svg class="i" aria-hidden="true"><use href="#i-camadas"/></svg></span><span>Base pronta com <span data-total-modulos>273</span> módulos</span></li>
+            <li><span class="diferenciais__icone"><svg class="i" aria-hidden="true"><use href="#i-monitor-check"/></svg></span><span>Ambiente de testes só seu</span></li>
+          </ul>
+        </div>
+
+        <div class="equipe" data-revelar>
+          <ul class="equipe__papeis" aria-label="As equipes do seu projeto">
+            <li style="--cor:#d4008a"><svg class="i" aria-hidden="true"><use href="#i-usuario"/></svg><span class="equipe__rotulo">Você</span></li>
+            <li style="--cor:#042258"><svg class="i" aria-hidden="true"><use href="#i-mensagem"/></svg><span class="equipe__rotulo">Comercial</span></li>
+            <li style="--cor:#2f6fed"><svg class="i" aria-hidden="true"><use href="#i-selo"/></svg><span class="equipe__rotulo">Direção de projetos</span></li>
+            <li style="--cor:#0c346b"><svg class="i" aria-hidden="true"><use href="#i-prancheta"/></svg><span class="equipe__rotulo">Gerente de projetos</span></li>
+            <li style="--cor:#fb03a9"><svg class="i" aria-hidden="true"><use href="#i-caneta"/></svg><span class="equipe__rotulo">Prototipagem</span></li>
+            <li style="--cor:#5b3fd6"><svg class="i" aria-hidden="true"><use href="#i-codigo"/></svg><span class="equipe__rotulo">Front-end</span></li>
+            <li style="--cor:#0d7a6e"><svg class="i" aria-hidden="true"><use href="#i-banco"/></svg><span class="equipe__rotulo">Back-end</span></li>
+            <li style="--cor:#b54708"><svg class="i" aria-hidden="true"><use href="#i-monitor-check"/></svg><span class="equipe__rotulo">Testes</span></li>
+            <li style="--cor:#067647"><svg class="i" aria-hidden="true"><use href="#i-foguete"/></svg><span class="equipe__rotulo">Entrega</span></li>
+          </ul>
+          <div class="equipe__texto">
+            <h3>Uma equipe inteira dedicada ao seu projeto</h3>
+            <p>Você não fala com robôs nem abre chamados sem fim: cada etapa tem uma equipe especialista, e o seu gerente de projetos acompanha tudo com você.</p>
+          </div>
+          <ul class="equipe__lista">
+            <li><span><svg class="i" aria-hidden="true"><use href="#i-usuario"/></svg></span>Acesso direto ao seu gerente de projetos</li>
+            <li><span><svg class="i" aria-hidden="true"><use href="#i-relogio"/></svg></span>Reuniões de aprovação em cada fase</li>
+            <li><span><svg class="i" aria-hidden="true"><use href="#i-usuarios"/></svg></span>Equipes de protótipo, front-end e back-end</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Como trabalhamos ===================== -->
+    <section id="processo" class="secao processo">
+      <div class="conteudo">
+        <header class="secao-cabecalho secao-cabecalho--acao" data-revelar>
+          <div>
+            <p class="sobretitulo">Como trabalhamos</p>
+            <h2>Da primeira conversa ao sistema no ar, <span class="realce">em 7 etapas</span></h2>
+            <p>Você acompanha cada momento e aprova cada passo importante antes de ele virar código.</p>
+          </div>
+          <a class="botao botao--primario" href="#contato" data-abrir-contato>Começar pela etapa 1</a>
+        </header>
+
+        <div class="etapas">
+          <ol class="etapas__lista" data-revelar-cascata>
+            <li class="etapa">
+              <span class="tag">Etapa 1</span>
+              <p class="etapa__equipe">Comercial</p>
+              <h3>Conversa inicial</h3>
+              <p>Você conta a sua ideia, e o responsável pelos projetos avalia e aprova o melhor caminho.</p>
+            </li>
+            <li class="etapa">
+              <span class="tag">Etapa 2</span>
+              <p class="etapa__equipe">Segunda reunião</p>
+              <h3>Seu gerente de projetos</h3>
+              <p>Um gerente só seu monta com você a documentação, as etapas e os prazos.</p>
+            </li>
+            <li class="etapa">
+              <span class="tag">Etapa 3</span>
+              <p class="etapa__equipe">Equipe de prototipagem</p>
+              <h3>Protótipo no Figma</h3>
+              <p>Todas as telas e fluxos desenhados. Na terceira reunião, você aprova textos e cores.</p>
+            </li>
+            <li class="etapa">
+              <span class="tag">Etapa 4</span>
+              <p class="etapa__equipe">Equipe de front-end</p>
+              <h3>Interface</h3>
+              <p>As telas aprovadas viram interface de verdade, na web e no celular.</p>
+            </li>
+            <li class="etapa">
+              <span class="tag">Etapa 5</span>
+              <p class="etapa__equipe">Equipe de back-end</p>
+              <h3>Regras e dados</h3>
+              <p>Regras de negócio, banco de dados e integrações ligados aos módulos do Nown.</p>
+            </li>
+            <li class="etapa">
+              <span class="tag">Etapa 6</span>
+              <p class="etapa__equipe">Servidor de testes</p>
+              <h3>Ambiente de testes</h3>
+              <p>Você cria uma conta e usa o sistema num servidor só seu, antes de ir ao ar.</p>
+            </li>
+            <li class="etapa">
+              <span class="tag">Etapa 7</span>
+              <p class="etapa__equipe">No ar</p>
+              <h3>Migração e entrega</h3>
+              <p>Com tudo aprovado, migramos para produção e entregamos o projeto funcionando.</p>
+            </li>
+          </ol>
+          <div class="etapa etapa--chamada" data-revelar>
+            <svg class="i" aria-hidden="true"><use href="#i-foguete"/></svg>
+            <p>Sua ideia pode ser a próxima a percorrer esse caminho.</p>
+            <a class="botao botao--branco" href="#contato" data-abrir-contato>Começar agora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Projetos ===================== -->
+    <section id="projetos" class="secao projetos" data-secao-projetos>
+      <div class="conteudo">
+        <header class="secao-cabecalho secao-cabecalho--acao" data-revelar>
+          <div>
+            <h2>Plataformas <span class="realce">de verdade</span>, já no ar</h2>
+            <p>Conheça alguns projetos que a Fortram colocou no ar, todos construídos sobre o Nown.</p>
+          </div>
+          <button class="botao botao--primario" type="button" data-ver-todos aria-expanded="false" aria-controls="lista-projetos" hidden>Ver todos os projetos</button>
+        </header>
+        <p class="projetos__resumo" data-resumo-projetos hidden></p>
+        <ul id="lista-projetos" class="projetos__grade" data-lista-projetos aria-live="polite"></ul>
+        <div class="projetos__nomes" aria-hidden="true"><div class="projetos__trilho" data-faixa-nomes></div></div>
+      </div>
+    </section>
+
+    <!-- ===================== Por segmento ===================== -->
+    <section id="segmentos" class="secao segmentos" data-secao-segmentos>
+      <div class="conteudo">
+        <header class="secao-cabecalho secao-cabecalho--acao" data-revelar>
+          <div>
+            <h2>Pontos de partida para <span class="realce">o seu segmento</span></h2>
+            <p>Cada tipo de projeto já começa com os módulos certos do Nown. Escolha o seu e fale com um especialista.</p>
+          </div>
+          <div class="carrossel__setas">
+            <button type="button" data-carrossel-anterior aria-label="Ver os anteriores" aria-controls="lista-segmentos"><svg class="i" aria-hidden="true"><use href="#i-anterior"/></svg></button>
+            <button type="button" data-carrossel-proximo aria-label="Ver os próximos" aria-controls="lista-segmentos"><svg class="i" aria-hidden="true"><use href="#i-seta"/></svg></button>
+          </div>
+        </header>
+        <ul id="lista-segmentos" class="carrossel" data-segmentos aria-label="Tipos de projeto"></ul>
+      </div>
+    </section>
+
+    <!-- ===================== Dúvidas ===================== -->
+    <section id="duvidas" class="secao duvidas">
+      <div class="conteudo duvidas__grade">
+        <header class="duvidas__topo" data-revelar>
+          <p class="sobretitulo">Central de ajuda</p>
+          <h2>Encontre <span class="realce">respostas rápidas</span> para dúvidas comuns</h2>
+          <p>Ainda tem dúvidas? <a class="link" href="#contato" data-abrir-contato>Fale com um especialista</a> da Fortram.</p>
+        </header>
+        <div class="perguntas" data-revelar>
+          <details class="pergunta" name="duvidas" open>
+            <summary>1. Quanto tempo leva para o meu sistema ficar pronto?</summary>
+            <p>Depende do tamanho do projeto. Na segunda reunião, o seu gerente de projetos monta com você o passo a passo e os prazos de cada etapa. Como boa parte do que um sistema precisa já existe no Nown, o tempo vai para o que é exclusivo do seu negócio.</p>
+          </details>
+          <details class="pergunta" name="duvidas">
+            <summary>2. Vocês fazem aplicativo para iPhone e Android?</summary>
+            <p>Sim. O Nown entrega web, iOS, Android e computador a partir de um único código, então você não precisa de equipes separadas para cada plataforma.</p>
+          </details>
+          <details class="pergunta" name="duvidas">
+            <summary>3. Consigo ver o sistema antes de ele ir ao ar?</summary>
+            <p>Sim, em dois momentos. Primeiro no protótipo do Figma, onde você aprova telas, textos e cores antes da programação. Depois no ambiente de testes, um servidor só seu, onde você cria uma conta e usa o sistema de verdade.</p>
+          </details>
+          <details class="pergunta" name="duvidas">
+            <summary>4. Quem acompanha o meu projeto?</summary>
+            <p>Cada cliente tem um gerente de projetos dedicado, responsável pela documentação, pelos prazos e pela conversa com as equipes de protótipo, front-end e back-end.</p>
+          </details>
+          <details class="pergunta" name="duvidas">
+            <summary>5. E se eu precisar de algo que ainda não existe no Nown?</summary>
+            <p>A gente cria. Quando o projeto pede uma funcionalidade nova, a equipe desenvolve um módulo novo para ele, já integrado a todo o resto da plataforma.</p>
+          </details>
+          <details class="pergunta" name="duvidas">
+            <summary>6. O sistema é seguro?</summary>
+            <p>A base do Nown segue práticas alinhadas à ISO 27001 e ao SOC 2, com permissões por perfil, registros de atividade e backups.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Chamada final ===================== -->
+    <section class="chamada">
+      <div class="conteudo chamada__conteudo" data-revelar>
+        <p class="chamada__selo">Fortram + Nown</p>
+        <h2>Crie e evolua o seu sistema com confiança, do protótipo à entrega. <span class="chamada__linha">Sem começar do zero. Sem perder o controle.</span></h2>
+        <div class="chamada__acoes">
+          <a class="botao botao--branco" href="#contato" data-abrir-contato>Começar meu projeto</a>
+          <a class="botao botao--escuro" href="#nown">Conhecer o Nown</a>
+          <a class="botao botao--escuro" href="#contato" data-abrir-contato data-preferir-whatsapp>Falar com um especialista</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteudo">
+      <div class="rodape__topo">
+        <img src="assets/img/marca/fortram-logo-negativo.svg" alt="Fortram Soluções Digitais" width="186" height="50" loading="lazy">
+        <ul class="rodape__redes" data-redes aria-label="Redes sociais" hidden></ul>
+      </div>
+      <div class="rodape__projetos">
+        <p>Plataformas no ar</p>
+        <ul class="rodape__lista" data-rodape-projetos>
+          <li>Fácil Aqui</li>
+          <li>Amplitur</li>
+          <li>Nestory</li>
+          <li>Flop Poker</li>
+          <li>Toylog</li>
+          <li>Sala do Rei</li>
+        </ul>
+      </div>
+      <div class="rodape__base">
+        <div>
+          <p>© <span data-ano>2026</span> Fortram Soluções Digitais. Todos os direitos reservados.</p>
+          <p>Nown é a plataforma de desenvolvimento da Fortram. Os projetos exibidos pertencem aos seus donos e aparecem com autorização.</p>
+        </div>
+        <nav class="rodape__links" aria-label="Rodapé">
+          <a href="#projetos">Projetos</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#contato" data-abrir-contato>Contato</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== Janela: contato ===================== -->
+  <dialog id="contato" class="janela" aria-labelledby="contato-titulo">
+    <button class="janela__fechar" type="button" data-fechar aria-label="Fechar"><svg class="i" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+    <div class="janela__rolagem">
+      <p class="sobretitulo">Etapa 1 · Conversa inicial</p>
+      <h2 id="contato-titulo">Conte a sua ideia</h2>
+      <p class="janela__texto">O nosso comercial responde e marca a primeira conversa.</p>
+
+      <form id="formulario-contato" class="formulario" action="api/contato.php" method="post" novalidate>
+        <div class="formulario__linha">
+          <div class="campo">
+            <label for="contato-nome">Nome</label>
+            <input id="contato-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" placeholder="Seu nome">
+          </div>
+          <div class="campo">
+            <label for="contato-email">E-mail</label>
+            <input id="contato-email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="voce@empresa.com.br">
+          </div>
+        </div>
+        <div class="formulario__linha">
+          <div class="campo">
+            <label for="contato-telefone">WhatsApp <span>(opcional)</span></label>
+            <input id="contato-telefone" name="telefone" type="tel" autocomplete="tel" maxlength="40" placeholder="(00) 00000-0000">
+          </div>
+          <div class="campo">
+            <label for="contato-tipo">O que você quer construir?</label>
+            <select id="contato-tipo" name="tipo">
+              <option value="Sistema web ou plataforma">Sistema web ou plataforma</option>
+              <option value="Aplicativo">Aplicativo</option>
+              <option value="SaaS">SaaS (vender o meu software)</option>
+              <option value="Loja virtual">Loja virtual</option>
+              <option value="Integrações e IA">Integrações e IA</option>
+              <option value="Ainda não sei">Ainda não sei</option>
+            </select>
+          </div>
+        </div>
+        <div class="campo">
+          <label for="contato-mensagem">Conte a sua ideia</label>
+          <textarea id="contato-mensagem" name="mensagem" required minlength="10" maxlength="4000" placeholder="O que o sistema precisa fazer, para quem e se já existe algo hoje."></textarea>
+        </div>
+        <div class="campo-isca" aria-hidden="true">
+          <label for="contato-site">Não preencha este campo</label>
+          <input id="contato-site" name="site" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" name="inicio">
+        <input type="hidden" name="pagina" value="v4-institucional">
+        <p class="formulario__status" role="status" aria-live="polite"></p>
+        <div class="formulario__rodape">
+          <p class="formulario__aviso">Ao enviar, você concorda em receber o contato da Fortram sobre este pedido.</p>
+          <button class="botao botao--primario" type="submit">
+            Enviar mensagem
+            <svg class="i seta" aria-hidden="true"><use href="#i-seta"/></svg>
+          </button>
+        </div>
+      </form>
+      <a class="janela__whatsapp" data-whatsapp hidden href="#">Prefere o WhatsApp? Chame a gente por lá</a>
+    </div>
+  </dialog>
+
+  <!-- ===================== Janela: módulos do Nown ===================== -->
+  <dialog id="modulos" class="janela janela--larga" aria-labelledby="modulos-titulo">
+    <button class="janela__fechar" type="button" data-fechar aria-label="Fechar"><svg class="i" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+    <div class="janela__rolagem">
+      <img class="janela__nown" src="assets/img/marca/nown-logo.svg" alt="Nown" width="100" height="24">
+      <h2 id="modulos-titulo">Módulos do Nown</h2>
+      <p class="janela__texto">Alguns dos <span data-total-modulos>273</span> módulos prontos para o seu projeto. Não achou o que precisa? A equipe cria um módulo novo.</p>
+      <div class="modulos__busca">
+        <svg class="i" aria-hidden="true"><use href="#i-busca"/></svg>
+        <label class="so-leitor" for="busca-modulos">Procure pelo módulo</label>
+        <input id="busca-modulos" type="search" placeholder="Procure pelo módulo" autocomplete="off" data-busca-modulos>
+      </div>
+      <p class="modulos__contagem" data-contagem-modulos aria-live="polite"></p>
+      <div class="modulos__lista" data-lista-modulos></div>
+      <div class="modulos__vazio" data-sem-modulos hidden>
+        <p>Esse módulo não está nesta lista. Se ele ainda não existir no Nown, a equipe cria para o seu projeto.</p>
+        <button class="botao botao--primario" type="button" data-abrir-contato>Falar com um especialista</button>
+      </div>
+    </div>
+  </dialog>
+
+  <button class="voltar-topo" type="button" data-voltar-topo aria-label="Voltar ao topo"><svg class="i" aria-hidden="true"><use href="#i-seta-cima"/></svg></button>
+
+  <a class="whatsapp-flutuante" data-whatsapp hidden href="#" aria-label="Conversar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></svg>
+  </a>
+</body>
+</html>

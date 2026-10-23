@@ -1,5 +1,5 @@
 /**
- * Configurações usadas pelas três versões da landing page.
+ * Configurações usadas por todas as versões da landing page.
  * Os dados de contato ficam aqui para serem trocados em um lugar só.
  */
 export const CONFIG = {
@@ -10,6 +10,14 @@ export const CONFIG = {
 
   // E-mail exibido na área de contato. Vazio = não aparece.
   email: '',
+
+  // Endereços das redes sociais, mostrados no rodapé da versão 4. Vazio = o ícone não aparece.
+  redes: {
+    instagram: '',
+    linkedin: '',
+    facebook: '',
+    youtube: '',
+  },
 
   // De onde vêm os dados. Primeiro tenta a API em PHP; se ela não responder
   // (por exemplo, com o site aberto num servidor sem PHP), lê o arquivo JSON direto.

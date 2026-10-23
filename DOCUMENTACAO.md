@@ -1,13 +1,14 @@
 # Landing pages da Fortram: documentação
 
-Este projeto tem **três propostas de landing page** para a Fortram e o Nown, feitas para a votação interna, e uma página para escolher entre elas:
+Este projeto tem **quatro propostas de landing page** para a Fortram e o Nown, feitas para a votação interna, e uma página para escolher entre elas:
 
 | Arquivo | O que é |
 | --- | --- |
-| `index.html` | Página interna de escolha: mostra as três versões lado a lado (fica fora do Google). |
+| `index.html` | Página interna de escolha: mostra as quatro versões lado a lado (fica fora do Google). |
 | `v1-corporativa.html` | **Versão 1, corporativa.** Profissional e sem 3D, com o produto em primeiro plano. |
 | `v2-processo-3d.html` | **Versão 2, a jornada em 3D.** O processo da Fortram contado em 3D, etapa por etapa. |
 | `v3-hibrida.html` | **Versão 3, híbrida.** O meio-termo: um pouco de animação, um pouco de 3D (só com CSS) e telas mockadas. |
+| `v4-institucional.html` | **Versão 4, institucional.** Feita a partir do site de referência enviado pela equipe: mesma estrutura e mesmo ritmo, com as cores e o conteúdo da Fortram e do Nown. |
 
 Tudo foi feito com **HTML, CSS, JavaScript puro e PHP**, sem framework, sem TypeScript e sem etapa de compilação: o que está nesta pasta é exatamente o que vai para o servidor.
 
@@ -42,7 +43,7 @@ TypeScript é JavaScript com tipos. O navegador não entende arquivos `.ts`: ele
 | Corrigir um texto ou um bug no servidor | Edita o arquivo e pronto | Edita o `.ts`, compila e envia o `.js` de novo |
 | Risco de manutenção | Baixo | Alguém editar o `.js` gerado direto no servidor e perder na próxima compilação |
 | Curva de aprendizado | Nenhuma para quem já usa JS | Sintaxe de tipos, `tsconfig.json`, compilação |
-| Ganho real aqui | | Pequeno: são ~2.500 linhas de JS (contando os comentários) divididas em arquivos curtos, com dados que vêm do nosso próprio JSON |
+| Ganho real aqui | | Pequeno: são ~2.900 linhas de JS (contando os comentários) divididas em arquivos curtos, com dados que vêm do nosso próprio JSON |
 
 TypeScript vale a pena em **aplicações grandes**, com muitas telas e várias pessoas mexendo no mesmo código ao mesmo tempo (o front-end do próprio Nown, por exemplo). Uma landing page não é esse caso.
 
@@ -117,12 +118,13 @@ fortram/
 ├── v1-corporativa.html        Versão 1
 ├── v2-processo-3d.html        Versão 2
 ├── v3-hibrida.html            Versão 3
+├── v4-institucional.html      Versão 4
 ├── .htaccess                  Configurações do Apache (tipos de arquivo, cache, segurança)
 ├── DOCUMENTACAO.md            Este arquivo (o .htaccess bloqueia o acesso pelo navegador)
 │
 ├── data/
-│   ├── projetos.json          Projetos exibidos nas três versões
-│   └── modulos.json           Catálogo de módulos do Nown usado nas versões 2 e 3
+│   ├── projetos.json          Projetos exibidos em todas as versões
+│   └── modulos.json           Catálogo de módulos do Nown usado nas versões 2, 3 e 4
 │
 ├── api/                       PHP que roda na HostGator
 │   ├── config.php             Configurações: e-mail do formulário, limites, caminhos
@@ -132,13 +134,14 @@ fortram/
 │
 └── assets/
     ├── css/
-    │   ├── base.css           Comum às três: fontes, cores, botões, formulário, janela de projeto
+    │   ├── base.css           Comum a todas: fontes, cores, botões, formulário, janela de projeto
     │   ├── v1.css             Só da versão 1
     │   ├── v2.css             Só da versão 2
-    │   └── v3.css             Só da versão 3
+    │   ├── v3.css             Só da versão 3
+    │   └── v4.css             Só da versão 4
     ├── js/
-    │   ├── comum/             Comum às três versões
-    │   │   ├── config.js      WhatsApp, e-mail e endereços dos dados
+    │   ├── comum/             Comum a todas as versões
+    │   │   ├── config.js      WhatsApp, e-mail, redes sociais e endereços dos dados
     │   │   ├── util.js        Funções pequenas (el, ícones, formatação)
     │   │   ├── dados.js       Busca projetos e módulos (API em PHP, com o JSON como reserva)
     │   │   ├── pagina.js      Topo, menu do celular, animação de entrada, contadores, WhatsApp
@@ -152,7 +155,8 @@ fortram/
     │   │   ├── estacoes.js       As 7 estações, uma função por etapa
     │   │   ├── telas.js          Desenhos em canvas usados nas telas 3D
     │   │   └── esfera-modulos.js Esfera de módulos (HTML, sem WebGL)
-    │   └── v3.js              Script da versão 3
+    │   ├── v3.js              Script da versão 3
+    │   └── v4.js              Script da versão 4
     ├── fonts/                 Montserrat, Inter e JetBrains Mono (arquivos locais) + licenças
     ├── img/
     │   ├── marca/             Logos da Fortram e do Nown, favicon
@@ -205,11 +209,11 @@ Cada versão ajusta o tema no começo do próprio CSS (`.v2 { --fundo: ...; }`).
 
 ### Projetos (`data/projetos.json`)
 
-As três versões leem a mesma lista. Chaves gerais:
+Todas as versões leem a mesma lista. Chaves gerais:
 
 | Chave | Para que serve |
 | --- | --- |
-| `mostrar_secao` | `false` esconde a seção de projetos (e os links do menu) nas três versões. |
+| `mostrar_secao` | `false` esconde a seção de projetos (e os links do menu) em todas as versões. |
 | `mostrar_modulos` | `false` esconde os módulos usados em cada projeto (chips e "Um projeto, vários módulos"). |
 | `projetos` | A lista de projetos. |
 
@@ -221,7 +225,8 @@ Campos de cada projeto:
 | `nome` | sim | Título do projeto. |
 | `segmento` | sim | Etiqueta acima do título e filtro da janela "Todos os projetos" (versão 2). |
 | `resumo` | sim | Uma ou duas frases, nos cartões. |
-| `sobre` | sim | Texto completo, na janela de detalhes. |
+| `chamada` | não | Frase curta do cartão da versão 4. O trecho entre asteriscos fica em magenta: `"Uma cidade inteira em *um só app*"`. Sem ela, aparece o nome do projeto. |
+| `sobre` | sim | Texto completo, na janela de detalhes (e nos cartões da versão 4). |
 | `destaques` | sim | Lista de pontos fortes, na janela de detalhes (e no cartão grande da versão 3). |
 | `modulo_principal` | não | Módulo criado para o cliente (ex.: `Fácil Aqui`), destacado em rosa. |
 | `modulos` | não | Módulos do Nown usados no projeto. |
@@ -243,6 +248,7 @@ Campos de cada projeto:
   "nome": "Novo Projeto",
   "segmento": "Educação",
   "resumo": "Uma frase sobre o projeto.",
+  "chamada": "Uma frase com *destaque*",
   "sobre": "O texto completo.",
   "destaques": ["Primeiro destaque", "Segundo destaque"],
   "modulo_principal": "Novo Projeto",
@@ -269,19 +275,27 @@ A resposta precisa ser `No error`. Também dá para colar o conteúdo em jsonlin
 | --- | --- |
 | `total` | Número de módulos em todas as versões. |
 | `base` | Módulos que todo sistema recebe. Versão 3, "Monte seu projeto" (em azul). |
-| `grupos` | Módulos agrupados por assunto. Versão 2 (esfera, 8 por grupo) e versão 3 (faixas, 12 por grupo). O `id` do grupo define a cor. |
-| `modelos` | Tipos de projeto da versão 3, "Monte seu projeto": nome, descrição e os módulos daquele tipo (em rosa). |
+| `grupos` | Módulos agrupados por assunto. Versão 2 (esfera, 8 por grupo), versão 3 (faixas, 12 por grupo) e versão 4 (janela "Módulos do Nown", com busca). O `id` do grupo define a cor. |
+| `modelos` | Tipos de projeto: na versão 3, "Monte seu projeto" (os módulos do tipo aparecem em rosa); na versão 4, o carrossel "Pontos de partida para o seu segmento". Cada um tem nome, descrição e os módulos daquele tipo. |
 
 A lista foi montada a partir do Gerenciador de Módulos mostrado no vídeo do Nown: são nomes reais, mas **é uma seleção, não os 273**. Revise e complete à vontade.
 
-### WhatsApp e e-mail (`assets/js/comum/config.js`)
+### WhatsApp, e-mail e redes sociais (`assets/js/comum/config.js`)
 
 ```js
 whatsapp: '5535999999999', // DDI + DDD + número, só dígitos
 email: 'contato@fortram.site',
+redes: {
+  instagram: 'https://www.instagram.com/...', // rodapé da versão 4
+  linkedin: 'https://www.linkedin.com/company/...',
+  facebook: '',
+  youtube: '',
+},
 ```
 
-**Enquanto `whatsapp` estiver vazio, todos os botões de WhatsApp ficam escondidos** (o flutuante e o da área de contato).
+**Enquanto `whatsapp` estiver vazio, todos os botões de WhatsApp ficam escondidos** (o flutuante, o da área de contato e o link do topo da versão 4). Na versão 4, "Falar com um especialista" da chamada final abre o WhatsApp quando houver número; sem número, abre a janela de contato.
+
+Cada rede vazia some do rodapé; com todas vazias, a linha de ícones não aparece.
 
 ### Formulário de contato (`api/config.php`)
 
@@ -297,7 +311,7 @@ define('CONTATO_LIMITE_POR_HORA', 5);                           // envios por vi
 
 ## 6. Como cada versão funciona
 
-### Comum às três
+### Comum a todas
 
 - **`pagina.js`**: topo que ganha fundo ao rolar, menu do celular, entrada suave dos blocos (`data-revelar`), contadores (`data-contar`), botões de WhatsApp e o número de módulos.
 - **`modal-projeto.js`**: a janela de detalhes do projeto, com o `<dialog>` nativo do navegador. Fecha com Esc, com o X ou clicando fora; as setas do teclado passam de projeto.
@@ -334,6 +348,32 @@ O JavaScript monta os cartões de projetos, a faixa com os nomes logo abaixo da 
 - **Monte seu projeto**: os botões vêm de `modelos` em `data/modulos.json`. "Quero um projeto assim" preenche o formulário com o tipo e os módulos escolhidos.
 - **Projetos**: grade em que o primeiro projeto da lista fica em destaque, com os destaques dele.
 
+### Versão 4: institucional (`v4.js`, `v4.css`)
+
+Feita a partir do vídeo do site de referência enviado pela equipe (um site de abertura de empresas nos EUA). Segue a mesma sequência de seções e o mesmo ritmo visual (fundo claro, títulos em peso leve, cartões arredondados, blocos escuros), trocando o verde da referência pelo azul-marinho e o magenta da Fortram, e o conteúdo pelo da Fortram e do Nown. Não tem 3D nem bibliotecas.
+
+| Na referência | Na versão 4 |
+| --- | --- |
+| Abertura com foto de pessoas, tablet com o painel e nota de avaliação | Palco com um projeto no ar, tablet com o painel do Nown e o selo "273 módulos prontos" |
+| "Seja para abrir ou expandir sua empresa" (dois cartões) | "Do primeiro protótipo ao sistema no ar": novo produto e empresa em operação |
+| Serviços incluídos em todos os planos (grade de cartões) | "Tudo o que o seu sistema precisa já vem pronto" |
+| Painel inteligente com vídeo | "Conheça o Nown": o painel e a janela "Módulos do Nown", com busca (no lugar do vídeo) |
+| "O que torna a empresa diferente" e o atendimento | "O que torna a Fortram diferente" e a equipe dedicada ao projeto |
+| (não tem) | "Como trabalhamos": as 7 etapas do processo da Fortram |
+| Depoimentos de clientes | "Plataformas de verdade, já no ar": projetos reais no lugar de depoimentos |
+| Blog | "Pontos de partida para o seu segmento" |
+| Perguntas frequentes | Perguntas frequentes |
+| Chamada final verde | Chamada final magenta |
+| Rodapé com logos de parceiros | Rodapé com as plataformas no ar |
+
+- **Ícones**: cada ícone é desenhado uma vez no começo do HTML (`<svg class="sprite">`, um `<symbol id="i-nome">` por ícone) e usado com `<svg class="i"><use href="#i-nome"/></svg>`. Para trocar um ícone na página inteira, edite só o `<symbol>`.
+- **Janelas**: todo elemento com `data-abrir-contato` (como "Começar meu projeto") abre a janela com o formulário; `data-tipo` e `data-mensagem` já preenchem os campos. `data-abrir-modulos` abre a busca de módulos. Um endereço terminado em `#contato` abre a janela de contato direto.
+- **Grade "já vem pronto"**: com mouse, a descrição de cada cartão aparece ao passar por cima (como na referência); no celular, fica sempre visível.
+- **Painel do Nown**: o mesmo HTML aparece no tablet da abertura, na grade e na seção do Nown. Os tamanhos são em `em`: o painel inteiro aumenta ou diminui mudando um único `font-size`.
+- **Projetos**: aparecem os 3 primeiros, e "Ver todos os projetos" mostra o resto. O cartão usa a `chamada` e o `sobre` do projeto e abre a mesma janela de detalhes das outras versões.
+- **Pontos de partida**: o carrossel vem de `modelos` em `data/modulos.json`. O ícone de cada tipo fica em `ICONES_SEGMENTO`, em `v4.js`; um tipo novo sem ícone recebe o de camadas.
+- **Foto na abertura**: se a equipe tiver uma foto, ela pode entrar no lugar da tela do projeto. O jeito está num comentário logo acima de `hero__palco`, no HTML.
+
 ---
 
 ## 7. API em PHP
@@ -350,7 +390,7 @@ O limite de envios é guardado na pasta temporária do servidor, por IP (o IP é
 
 ### Deixar os projetos dinâmicos, lendo do servidor do Nown
 
-Hoje os projetos vêm de `data/projetos.json`. A ideia é, no futuro, ler direto do servidor do Nown (por exemplo, a partir do módulo principal de cada projeto). **Para isso, só a função `carregarProjetos()` em `api/projetos.php` precisa mudar**: as três versões continuam iguais, desde que cada projeto mantenha os campos da tabela da seção 5.
+Hoje os projetos vêm de `data/projetos.json`. A ideia é, no futuro, ler direto do servidor do Nown (por exemplo, a partir do módulo principal de cada projeto). **Para isso, só a função `carregarProjetos()` em `api/projetos.php` precisa mudar**: todas as versões continuam iguais, desde que cada projeto mantenha os campos da tabela da seção 5.
 
 Um exemplo de como poderia ficar, lendo um arquivo JSON por projeto de uma pasta do servidor (o caminho e o formato são ilustrativos e dependem de como o Nown guarda essas informações):
 
@@ -377,7 +417,7 @@ O mesmo vale para `carregarModulos()` em `api/modulos.php`: dá para trocar o `t
 ### Antes de enviar
 
 1. Em `api/config.php`, preencha `CONTATO_EMAIL_DESTINO` e `CONTATO_EMAIL_REMETENTE`.
-2. Em `assets/js/comum/config.js`, preencha `whatsapp` (e `email`, se quiser).
+2. Em `assets/js/comum/config.js`, preencha `whatsapp` (e `email`, se quiser). Para a versão 4, preencha também as `redes` sociais.
 3. No `<head>` da versão que vai ao ar, troque `content="assets/img/og/fortram.jpg"` da tag `og:image` pelo endereço completo (ex.: `https://fortram.site/assets/img/og/fortram.jpg`). WhatsApp e LinkedIn só mostram a imagem de compartilhamento com o endereço completo.
 
 ### Enviando os arquivos
@@ -424,9 +464,10 @@ O mesmo vale para `carregarModulos()` em `api/modulos.php`: dá para trocar o `t
 
 | Versão escolhida | Pode apagar |
 | --- | --- |
-| 1 | `v2-processo-3d.html`, `v3-hibrida.html`, `assets/css/v2.css`, `assets/css/v3.css`, `assets/js/v2.js`, `assets/js/v2/`, `assets/js/v3.js`, `assets/vendor/` |
-| 2 | `v1-corporativa.html`, `v3-hibrida.html`, `assets/css/v1.css`, `assets/css/v3.css`, `assets/js/v1.js`, `assets/js/v3.js` |
-| 3 | `v1-corporativa.html`, `v2-processo-3d.html`, `assets/css/v1.css`, `assets/css/v2.css`, `assets/js/v1.js`, `assets/js/v2.js`, `assets/js/v2/`, `assets/vendor/` |
+| 1 | `v2-processo-3d.html`, `v3-hibrida.html`, `v4-institucional.html`, `assets/css/v2.css`, `assets/css/v3.css`, `assets/css/v4.css`, `assets/js/v2.js`, `assets/js/v2/`, `assets/js/v3.js`, `assets/js/v4.js`, `assets/vendor/` |
+| 2 | `v1-corporativa.html`, `v3-hibrida.html`, `v4-institucional.html`, `assets/css/v1.css`, `assets/css/v3.css`, `assets/css/v4.css`, `assets/js/v1.js`, `assets/js/v3.js`, `assets/js/v4.js` |
+| 3 | `v1-corporativa.html`, `v2-processo-3d.html`, `v4-institucional.html`, `assets/css/v1.css`, `assets/css/v2.css`, `assets/css/v4.css`, `assets/js/v1.js`, `assets/js/v2.js`, `assets/js/v2/`, `assets/js/v4.js`, `assets/vendor/` |
+| 4 | `v1-corporativa.html`, `v2-processo-3d.html`, `v3-hibrida.html`, `assets/css/v1.css`, `assets/css/v2.css`, `assets/css/v3.css`, `assets/js/v1.js`, `assets/js/v2.js`, `assets/js/v2/`, `assets/js/v3.js`, `assets/vendor/` |
 
 Em todos os casos, `assets/img/versoes/` só é usada pela página de escolha. Mantenha sempre `assets/css/base.css`, `assets/js/comum/`, `assets/fonts/`, `assets/img/marca/`, `assets/img/projetos/`, `assets/img/og/`, `api/` e `data/`.
 
@@ -445,13 +486,17 @@ Em todos os casos, `assets/img/versoes/` só é usada pela página de escolha. M
 
 `assets/vendor/three/three.module.min.js` é a biblioteca **three@0.186.1** (licença MIT, em `assets/vendor/three/LICENSE`), com os arquivos `three.module.js` e `three.core.js` do pacote unidos e minificados. Os três arquivos de `addons/` foram copiados do pacote sem alteração. Para atualizar no futuro, baixe a versão nova do pacote `three` no npm e repita esse processo.
 
+### Sobre os ícones
+
+Os ícones são desenhos simples em SVG feitos para o projeto, no estilo da biblioteca Lucide (licença ISC, de uso livre). Os ícones das redes sociais da versão 4 ficam em `REDES`, em `assets/js/v4.js`.
+
 ---
 
 ## 11. O que foi feito, o que não foi feito e o que conferir
 
 ### Feito
 
-- Três landing pages completas e responsivas (computador e celular), com a página de escolha.
+- Quatro landing pages completas e responsivas (computador e celular), com a página de escolha. A versão 4 segue o site de referência enviado em vídeo.
 - Projetos dinâmicos a partir de um JSON, com API em PHP pronta para ser ligada ao servidor do Nown.
 - Formulário de contato que envia por e-mail, com validação, proteção contra robôs e limite de envios.
 - Logos da Fortram vetorizados em SVG a partir das imagens enviadas (versões horizontal, vertical, negativa e o símbolo).
@@ -464,6 +509,9 @@ Em todos os casos, `assets/img/versoes/` só é usada pela página de escolha. M
 - **Google Analytics / Google Ads**: não foram adicionados. Se forem colocados, o site passa a precisar de um aviso de cookies (LGPD).
 - **Logo oficial do Nown**: o logo em `assets/img/marca/nown-logo.svg` foi **redesenhado a partir do vídeo** e é uma aproximação. Substitua pelo arquivo oficial mantendo o mesmo nome.
 - **Contagem real de módulos**: o número vem de `total` em `data/modulos.json` (veja a seção 7 para ligar ao servidor).
+- **Fotos de pessoas (versão 4)**: a referência usa fotos de pessoas em vários lugares. Sem fotos da equipe, a versão 4 usa telas reais dos projetos e telas desenhadas em HTML; foto de banco de imagens não foi usada para não parecer que é a equipe da Fortram.
+- **Depoimentos, nota de avaliação e logos de parceiros (versão 4)**: a referência tem os três. Nenhum foi inventado: no lugar entram os projetos reais, "6 plataformas no ar" e os nomes das plataformas. Se a Fortram tiver depoimentos reais, com autorização dos clientes, a seção de projetos pode virar uma seção de depoimentos.
+- **Blog, login, seletor de idioma e páginas de termos (versão 4)**: existem na referência, mas a Fortram ainda não tem; ficaram de fora para não virarem links quebrados.
 
 ### Conferir antes de publicar
 
@@ -472,6 +520,8 @@ Estes dados vieram das conversas e do vídeo e precisam da confirmação de algu
 - **273 módulos**: é o número que aparece no Gerenciador de Módulos do vídeo (a conversa falava em "pelo menos 180").
 - **"10+ anos de mercado"** (números da versão 1).
 - **"Nota 100 de desempenho no Lighthouse"** e **"práticas alinhadas à ISO 27001 e ao SOC 2"**: o texto evita dizer que há certificação. Ajuste se houver certificado ou se a frase não se aplicar.
-- **As etapas do processo**: a versão 1 mostra 8 etapas (a conversa inicial e a avaliação aparecem separadas); as versões 2 e 3 mostram 7.
+- **As etapas do processo**: a versão 1 mostra 8 etapas (a conversa inicial e a avaliação aparecem separadas); as versões 2, 3 e 4 mostram 7.
 - **Textos e módulos de cada projeto** em `data/projetos.json`: vieram do portfólio e do vídeo. Confirme também a permissão para exibir cada projeto.
 - **WhatsApp e e-mail** (seção 5): enquanto estiverem vazios, os botões de WhatsApp ficam escondidos e o formulário não envia.
+- **Redes sociais da versão 4** (seção 5): enquanto estiverem vazias, os ícones não aparecem no rodapé.
+- **Rodapé da versão 4**: diz que os projetos exibidos "aparecem com autorização". Confirme que isso vale para todos os projetos da lista.
