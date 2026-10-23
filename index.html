@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fortram | Escolha da landing page</title>
-  <meta name="description" content="Página interna para comparar e votar nas três propostas de landing page da Fortram.">
+  <meta name="description" content="Página interna para comparar e votar nas propostas de landing page da Fortram.">
   <!-- Página interna de votação: fica fora do Google -->
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#042258">
@@ -55,9 +55,9 @@
       gap: 24px;
     }
 
-    @media (min-width: 1000px) {
+    @media (min-width: 760px) {
       .versoes {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -170,7 +170,7 @@
     <header class="escolha__topo">
       <img src="assets/img/marca/fortram-logo.svg" alt="Fortram Soluções Digitais" width="186" height="50">
       <span class="etiqueta">Página interna</span>
-      <h1>Três propostas para a nova landing page</h1>
+      <h1>Quatro propostas para a nova landing page</h1>
       <p>Abra cada versão, navegue até o fim (no computador e no celular) e vote na que melhor apresenta a Fortram e o Nown.</p>
     </header>
 
@@ -228,9 +228,27 @@
           <a class="botao botao--primario" href="v3-hibrida.html">Abrir a versão 3</a>
         </div>
       </article>
+
+      <article class="versao">
+        <a class="versao__imagem" href="v4-institucional.html" tabindex="-1" aria-hidden="true">
+          <img src="assets/img/versoes/v4-institucional.webp" alt="" width="960" height="600">
+        </a>
+        <div class="versao__corpo">
+          <p class="versao__numero">Versão 4</p>
+          <h2>Institucional</h2>
+          <p class="versao__descricao">Feita a partir do site de referência enviado pela equipe: a mesma estrutura e o mesmo ritmo, com as cores e o conteúdo da Fortram e do Nown.</p>
+          <ul>
+            <li>Abertura com o painel do Nown e um projeto no ar</li>
+            <li>Grade "Tudo o que o seu sistema precisa já vem pronto"</li>
+            <li>Janela com os módulos do Nown e busca por nome</li>
+            <li>Projetos em cartões, soluções por segmento e dúvidas</li>
+          </ul>
+          <a class="botao botao--primario" href="v4-institucional.html">Abrir a versão 4</a>
+        </div>
+      </article>
     </div>
 
-    <p class="escolha__nota"><b>As três versões usam os mesmos dados</b>: os projetos de <code>data/projetos.json</code>, os módulos de <code>data/modulos.json</code> e o mesmo formulário de contato. Depois da votação, o passo a passo para colocar a versão escolhida como página principal está no arquivo <code>DOCUMENTACAO.md</code> do projeto.</p>
+    <p class="escolha__nota"><b>As quatro versões usam os mesmos dados</b>: os projetos de <code>data/projetos.json</code>, os módulos de <code>data/modulos.json</code> e o mesmo formulário de contato. Depois da votação, o passo a passo para colocar a versão escolhida como página principal está no arquivo <code>DOCUMENTACAO.md</code> do projeto.</p>
   </main>
 </body>
 </html>

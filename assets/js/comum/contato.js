@@ -67,18 +67,33 @@ export function iniciarContato(formulario) {
 }
 
 /**
- * Preenche o formulário a partir de outro ponto da página (ex.: "Quero um projeto assim") e rola até ele.
+ * Preenche o tipo de projeto e a mensagem do formulário.
+ * Nunca apaga o que a pessoa escreveu: a mensagem só é trocada se o campo estiver vazio
+ * ou ainda tiver o texto preenchido automaticamente da vez anterior.
  */
-export function preencherContato({ tipo, mensagem } = {}) {
-  const formulario = document.querySelector('#formulario-contato')
+export function preencherFormulario(formulario, { tipo, mensagem } = {}) {
   if (!formulario) return
   if (tipo && formulario.elements.tipo) {
     const opcao = [...formulario.elements.tipo.options].find((o) => o.value === tipo)
     if (opcao) formulario.elements.tipo.value = tipo
   }
-  if (mensagem && formulario.elements.mensagem && !formulario.elements.mensagem.value.trim()) {
-    formulario.elements.mensagem.value = mensagem
+  const campo = formulario.elements.mensagem
+  if (mensagem && campo) {
+    const atual = campo.value.trim()
+    if (!atual || atual === campo.dataset.automatica) {
+      campo.value = mensagem
+      campo.dataset.automatica = mensagem
+    }
   }
+}
+
+/**
+ * Preenche o formulário a partir de outro ponto da página (ex.: "Quero um projeto assim") e rola até ele.
+ */
+export function preencherContato(dados = {}) {
+  const formulario = document.querySelector('#formulario-contato')
+  if (!formulario) return
+  preencherFormulario(formulario, dados)
   document.querySelector('#contato')?.scrollIntoView({ behavior: 'smooth' })
   formulario.elements.nome?.focus({ preventScroll: true })
 }
